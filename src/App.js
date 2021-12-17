@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import React from "react";
+import "./App.css";
+import Datafetch from "./Datafetch";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  let [timeBegin, setTimeBegin] = React.useState(0);
+  let [timeEnd, setTimeEnd] = React.useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Datafetch timeBegin={timeBegin} timeEnd={timeEnd} />
+      Start date:
+      <input
+        type="date"
+        name="datetime"
+        onChange={(e) => {
+          var variable = e.target.value;
+          var date = new Date(variable).getTime() / 1000;
+
+          setTimeBegin(date);
+        }}
+      />
+      End date:
+      <input
+        type="date"
+        name="datetime"
+        onChange={(e) => {
+          var variable = e.target.value;
+          var date = new Date(variable).getTime() / 1000 + 3600;
+
+          setTimeEnd(date);
+        }}
+      />
     </div>
   );
 }
