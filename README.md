@@ -1,3 +1,10 @@
+ScroogeMcDuck bitcoin analyser project which tells bitcoin price on given data range on each day and tells longest bearish trend on the chosen date range
+and highest volume on given date range and aswell when it has been best day to buy and sell bitcoin during that chosen date range.
+
+Heroku link to project: https://scroogemcduckbitcoinanalyser.herokuapp.com/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

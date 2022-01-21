@@ -4,6 +4,8 @@ import Table from "react-bootstrap/Table";
 import "./App.css";
 
 function Datafetch(props) {
+
+  // luodaan tilat eri muuttujille
   let [volume, setVolume] = React.useState([]);
   let [result, setResult] = React.useState([]);
   let [value, setValue] = React.useState(0);
@@ -16,7 +18,7 @@ function Datafetch(props) {
 
   var cryptoArray = [];
   var cryptoArray2 = [];
-
+ // hintojen vertailu
   const ComparePrices = () => {
     var Array = [];
 
@@ -35,7 +37,7 @@ function Datafetch(props) {
 
     setCounter(highestAmount);
   };
-
+  // volyymien vertailu
   const CompareVolumes = () => {
     const amounts = volume.map((a) => a[1]);
     const highestAmount = Math.max(...amounts);
@@ -55,7 +57,7 @@ function Datafetch(props) {
       });
     }
   };
-
+ // funktio, joka katsoo koska on järkevintä ostaa ja myydä bitcoinia
   const BuyAndSell = () => {
     //console.log(result.length);
     if (result.length === 0) {
@@ -130,6 +132,7 @@ function Datafetch(props) {
     }
   };
 
+  //datan hakeminen apista
   React.useEffect(() => {
     async function fetchCryptoData() {
       if (props.timeBegin > props.timeEnd) {
@@ -172,7 +175,7 @@ urrency=eur&from=${props.timeBegin}&to=${props.timeEnd}`);
     }
     fetchCryptoData();
   }, [props.timeBegin, props.timeEnd]);
-
+  //tulostetaan näytölle haettu data ja sen käsittelyn jälkeen halutut tiedot
   return (
     <div>
       <h2>Bitcoin price and date</h2>

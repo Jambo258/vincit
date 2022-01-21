@@ -5,9 +5,12 @@ import Datafetch from "./Datafetch";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  // Luodaan tilat input kenttien päivämäärille
+
   let [timeBegin, setTimeBegin] = React.useState(0);
   let [timeEnd, setTimeEnd] = React.useState(0);
 
+  //luodaan päivämäärien input kentät ja välitetään arvot Datafetch funktiolle
   return (
     <div>
       <Datafetch timeBegin={timeBegin} timeEnd={timeEnd} />
